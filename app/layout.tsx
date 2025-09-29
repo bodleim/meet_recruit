@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "@/styles/landing.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,6 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <nav className="site-nav">
+          <div className="site-nav__brand">That's Meeting</div>
+          <div className="site-nav__spacer" />
+          <a href="/sign-in">로그인</a>
+          <a href="/sign-up">가입</a>
+        </nav>
         {children}
       </body>
     </html>

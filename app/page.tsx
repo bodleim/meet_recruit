@@ -1,23 +1,39 @@
 import "@/styles/landing.css";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="landing">
       <div className="container">
-        <nav className="site-nav">
-          <div className="site-nav__brand">That's Meeting</div>
-          <div className="site-nav__spacer" />
-          <a href="/sign-in">로그인</a>
-          <a href="/sign-up">가입</a>
-        </nav>
-
         <section className="hero">
-          <span className="hero__eyebrow">Build dream, Just doing.</span>
-          <h1 className="hero__title">모임을 간편하게<br/>그건모임 에서.</h1>
-          <p className="hero__subtitle">같은 목표, 함께하는 발전</p>
-          <div className="hero__cta">
-            <a className="btn btn--primary" href="/sign-up">무료로 시작</a>
-            <a className="btn btn--ghost" href="/sign-in">로그인</a>
+          {/* 텍스트 묶음 래퍼 */}
+          <div className="hero__content">
+            <span className="hero__eyebrow">Build dream, Just doing.</span>
+            <h1 className="hero__title">
+              모임을 간편하게
+              <br />
+              그건모임 에서.
+            </h1>
+            <p className="hero__subtitle">같은 목표, 함께하는 발전</p>
+            <div className="hero__cta">
+              <a className="btn btn--primary" href="/sign-up">
+                무료로 시작
+              </a>
+              <a className="btn btn--ghost" href="/sign-in">
+                로그인
+              </a>
+            </div>
+          </div>
+
+          {/* 오른쪽 목업 이미지 */}
+          <div className="hero__image">
+            <Image
+              src="/mockup_portrait.png"
+              alt="앱 목업"
+              width={400}
+              height={800}
+              priority
+            />
           </div>
         </section>
 
