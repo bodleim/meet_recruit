@@ -54,10 +54,11 @@ body {
   display: flex;
   justify-content: center; /* 가로 방향 중앙 정렬 */
   align-items: center; /* 세로 방향 중앙 정렬 */
+  font-size: 0.8rem;
 }
 
 /* 로그인 카드 박스 */
-.signin {
+.signup {
   background: white;
   padding: 2.5rem;
   border-radius: 16px;
@@ -106,23 +107,4 @@ input:focus {
 /* 마우스 얹으면 더 짙은 파랑으로 변경 */
 .submit:hover {
   background: #0284c7;
-}
-
-.other-help {
-  display: flex;
-  justify-content: space-between;
-  margin-top: var(--space-3);
-  font-size: 0.9rem;
-}
-
-/* 링크 기본 스타일 (색상/효과) */
-.other-help a {
-  color: #64748b; /* 회색 계열 기본색 */
-  text-decoration: none; /* 밑줄 제거 */
-  transition: color 0.2s ease; /* 색상 변경 부드럽게 */
-}
-
-/* 마우스 올릴 시 색상 강조 */
-.other-help a:hover {
-  color: #0ea5e9; /* 브랜드 블루 강조 */
 }

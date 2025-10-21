@@ -1,30 +1,22 @@
-import NextAuth from "next-auth/next";
-import CredentialsProvider from "next-auth/providers/credentials";
+import NextAuth from "next-auth";
+import KakaoProvider from "next-auth/providers/kakao";
+import NaverProvider from "next-auth/providers/naver";
 
 const handler = NextAuth({
-    providers: [
-        // 이메일, 패스워드 방식으로 사용자가 직접 DB를 컨트롤 가능
-        CredentialsProvider({
-            name: "Credentials",
-            
-            // 로그인 form
-            credentials: {
-                username: {label: "이메일", type: "text", placeholder: "이메일 입력"},
-                password: {label: "비밀번호", type: "password"},
-            },
-
-            // 이메일, 패스워드 부분 체크, 맞으면 user 객체 리턴 틀리면 null 리턴
-            async authorize(credentials, req) {
-                const user = {id: "1", name: "smith", email: "smith@example.com"};
-
-                if (user) {
-                    return user;
-                } else {
-                    return null;
-                }
-            },
-        }),
-    ],
+  // 커스텀 로그인 페이지를 사용하는 경우 페이지 추가
+  pages: {
+    signIn: "signin",
+  },
+  providers: [
+    KakaoProvider({
+      clientId: process.env.KAKAO_CLIENT_ID as string,
+      clientSecret: process.env.KAKAO_CLIENT_SECRET as string,
+    }),
+    NaverProvider({
+      clientId: process.env.NAVER_CLIENT_ID as string,
+      clientSecret: process.env.NAVER_CLIENT_SECRET as string,
+    }),
+  ],
 });
 
 export { handler as GET, handler as POST };

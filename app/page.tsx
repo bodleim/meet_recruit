@@ -19,7 +19,7 @@ export default function Home() {
               <a className="btn btn--primary" href="/sign-up">
                 무료로 시작
               </a>
-              <a className="btn btn--ghost" href="/sign-in">
+              <a className="btn btn--ghost" href="/signin">
                 로그인
               </a>
             </div>
