@@ -1,4 +1,6 @@
+"use client";
 import "@/styles/signin.css";
+import { signIn } from "next-auth/react";
 
 export default function Signin() {
   return (
@@ -10,6 +12,16 @@ export default function Signin() {
           <input type="text" id="user-id"></input>
           <h3 className="password-message">Password</h3>
           <input type="password" id="user-password"></input>
+          <div className="social-login">
+            <button
+              className="google-login"
+              type="button"
+              aria-label="Google 계정으로 로그인"
+              onClick={() => signIn("google", { callbackUrl: "/" })}
+            >
+              Google 계정으로 로그인
+            </button>
+          </div>
           <button className="submit">로그인</button>
           <div className="other-help">
             <a className="find-account">ID/PW 찾기</a>

@@ -6,7 +6,7 @@
   --brand: #0ea5e9; /* 밝은 하늘색 CTA */
   --brand-contrast: #ffffff;
 
-  --card: #ffffff;
+  --card: #ffffff
   --card-border: #e5e7eb;
 
   --radius: 16px;
@@ -125,4 +125,106 @@ input:focus {
 /* 마우스 올릴 시 색상 강조 */
 .other-help a:hover {
   color: #0ea5e9; /* 브랜드 블루 강조 */
+}
+
+
+
+/* 
+
+구글 로그인 버튼
+
+*/
+/* 소셜 로그인과 입력 필드 사이 일관된 간격을 위한 래퍼 */
+.social-login {
+  margin-top: var(--space-3);              /* 비밀번호 필드와 거리 */
+}
+
+/* 구글 로그인 버튼 기본 스타일 */
+.google-login {
+  /* 레이아웃 */
+  width: 100%;                             /* 입력 필드와 같은 전체 너비 */
+  display: inline-flex;                    /* 중앙 정렬 + 의사 아이콘 */
+  align-items: center;                     /* 수직 중앙 정렬 */
+  justify-content: center;                 /* 텍스트/아이콘 중앙 정렬 */
+  gap: var(--space-3);                     /* 아이콘과 텍스트 사이 간격 */
+
+  /* 간격 및 모양 */
+  padding: var(--space-3) var(--space-4);  /* 입력 필드와 같은 수직 리듬 */
+  border-radius: 8px;                      /* 입력/버튼과 같은 반경 */
+
+  /* 시각적 요소 */
+  background: #ffffff;                     /* 구글 버튼은 명세에 따라 흰색 */
+  color: #111827;                          /* 좋은 대비를 위한 거의 검은색 */
+  border: 1px solid #d1d5db;               /* 은은한 회색 테두리 */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);  /* 가벼운 입체감 */
+
+  /* 텍스트 */
+  font-size: 1rem;                         /* .submit과 일치 */
+  font-weight: 600;                        /* 중간 굵기 라벨 */
+
+  /* 상호작용 */
+  cursor: pointer;                         /* 호버 시 포인터 */
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.02s ease;                  /* 빠른 클릭 피드백 */
+}
+
+/* 구글 "G" 아이콘을 해상도 독립적인 인라인 SVG로 구현.
+   - 외부 자산 임포트 방지
+   - 색상 상속 없음; SVG 경로 내 브랜드 색상 사용
+*/
+.google-login::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  /* 구글 다색 "G" 마크 (2024 명세) */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48"><path fill="%234285F4" d="M24 9.5c3.6 0 6.8 1.3 9.4 3.8l7-7C35.8 1.9 30.3 0 24 0 14.6 0 6.4 5.4 2.5 13.2l8.2 6.4C12.8 14.2 17.9 9.5 24 9.5z"/><path fill="%2334A853" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.6c-.5 2.8-2.1 5.2-4.6 6.8l7.1 5.5c4.1-3.8 6.5-9.4 6.5-16.8z"/><path fill="%23FBBC05" d="M10.7 27.4c-.6-1.8-1-3.7-1-5.7s.4-3.9 1-5.7l-8.2-6.4C.8 12.1 0 15.9 0 19.9s.8 7.8 2.5 10.3l8.2-2.8z"/><path fill="%23EA4335" d="M24 48c6.3 0 11.6-2.1 15.5-5.8l-7.1-5.5c-2 1.3-4.6 2-8.4 2-6.1 0-11.2-4.7-13.2-10.8l-8.2 2.8C6.4 42.6 14.6 48 24 48z"/></svg>');
+}
+
+/* 호버 상태: 약간의 그림자와 브랜드 색상 테두리로 시각적 피드백 제공 */
+.google-login:hover {
+  background: #f9fafb;                     /* 밝은 회색 호버 */
+  border-color: #0ea5e9;                   /* --brand 색상과 연결 */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);  /* 약간 더 강한 그림자 */
+}
+
+/* 포커스 상태: 접근성 높은 포커스 링 (WCAG 준수) */
+.google-login:focus-visible {
+  outline: none;                            /* 기본 윤곽선 제거 */
+  box-shadow:
+    0 0 0 3px rgba(14, 165, 233, 0.35),     /* 브랜드 색상 링 */
+    0 1px 2px rgba(0,0,0,0.04);
+  border-color: #0ea5e9;
+}
+
+/* 활성 상태: 눌렀을 때 촉각 피드백 */
+.google-login:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+
+/* 비활성 상태: 나중에 로딩/비활성화 로직 연결 시 대비 */
+.google-login:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(10%);
+}
+
+/* 기본 제출 버튼 옆이나 위에 배치될 때,
+   수직 리듬 일관성 유지 */
+.social-login + .submit {
+  margin-top: var(--space-3);
+}
+
+/* 작은 화면: 편안한 탭 타겟과 간격 확보 */
+@media (max-width: 420px) {
+  .google-login {
+    padding: var(--space-4);               /* 약간 더 큰 탭 타겟 */
+    font-size: 1.05rem;                    /* 약간의 가독성 향상 */
+  }
 }

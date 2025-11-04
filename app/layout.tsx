@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SessionProvider } from "next-auth/react";
 import "./globals.css";
 import "@/styles/landing.css";
+import AuthContext from "./context/AuthContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,15 +27,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <nav className="site-nav">
-          <div className="site-nav__brand">That's Meeting</div>
-          <div className="site-nav__spacer" />
-          <a href="/sign-in">로그인</a>
-          <a href="/sign-up">가입</a>
-        </nav>
-        {children}
-      </body>
+      <AuthContext>
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <nav className="site-nav">
+            <a className="site-nav__brand" href="/">
+              That's Meeting
+            </a>
+            <div className="site-nav__spacer" />
+            <a href="/sign-in">로그인</a>
+            <a href="/sign-up">가입</a>
+          </nav>
+          {children}
+        </body>
+      </AuthContext>
     </html>
   );
 }
