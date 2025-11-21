@@ -1,0 +1,123 @@
+.detail-page {
+  min-height: 100vh;
+  background: #f7f7f8;
+  padding: 40px 0 80px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #191f28;
+}
+
+.detail-back-row {
+  width: 960px;
+  margin: 0 auto 16px;
+}
+
+.detail-back-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid #e5e8eb;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #4e5968;
+}
+
+.detail-container {
+  width: 960px;
+  margin: 0 auto;
+  display: flex;
+  gap: 32px;
+}
+
+.detail-main {
+  flex: 1;
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 32px 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.detail-header {
+  margin-bottom: 12px;
+}
+
+.detail-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 4px;
+  font-size: 13px;
+  color: #8b95a1;
+}
+
+.detail-dot {
+  margin: 0 4px;
+}
+
+.detail-divider {
+  height: 1px;
+  background: #e5e8eb;
+  margin: 18px 0 16px;
+}
+
+.detail-content-section {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.detail-content {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.detail-side {
+  width: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-status {
+  width: 100%;
+  padding: 10px 0;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 12px;
+  border: none;
+}
+
+.detail-btn {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 12px;
+  border: 1px solid #e5e8eb;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.detail-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid #e5e8eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notfound {
+  width: 100%;
+  text-align: center;
+  padding: 80px 0;
+  color: #8b95a1;
+}

@@ -1,7 +1,7 @@
 /* ========== CSS 변수 & 기본 세팅 ========== */
 :root {
   color-scheme: light only;
-  --bg: hsl(0, 8%, 95%);
+  --bg: hsl(0, 0%, 98%);
   --fg: #000000; /* 더 밝은 본문 톤 */
   --muted: #64748b; /* slate-500~600 중간 */
   --brand: #0ea5e9; /* 밝은 하늘색 CTA */
@@ -172,7 +172,7 @@ body {
   justify-content: space-between;
   gap: 16px;
   margin: 20px 5% 24px 5%;
-  background: hsl(0, 8%, 95%);
+  background: hsl(0, 8%, 98%);
 }
 
 /* 큰 제목(좌측) */
